@@ -1,9 +1,6 @@
 export class GameOfLife {
-  public getCellStatus(a: number) {
-    if (a < 2) {
-      return "DEAD";
-    }
-
-    return "ALIVE";
+  public getCellStatus(numOfNeighbors: number) {
+    if (numOfNeighbors == 2 || numOfNeighbors == 3) return "ALIVE"
+    else return "DEAD"
   }
 }
