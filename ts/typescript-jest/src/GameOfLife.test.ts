@@ -16,4 +16,12 @@ describe("GameOfLife", () => {
 
     expect(cellStatus).toBe("DEAD");
   });
+
+  it("should die when underpopulated, when it has 2 neighbours", () => {
+    const gameOfLife = new GameOfLife();
+
+    const cellStatus = gameOfLife.getCellStatus(2);
+
+    expect(cellStatus).toBe("ALIVE");
+  });
 });
