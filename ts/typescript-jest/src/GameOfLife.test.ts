@@ -1,19 +1,18 @@
 import { GameOfLife } from "./GameOfLife";
 
 describe("GameOfLife", () => {
-  it("should always return alive if not dead", () => {
+  it("should die when underpopulated, when it has no neighbour", () => {
     const gameOfLife = new GameOfLife();
 
-    const cellStatus = gameOfLife.getCellStatus();
+    const cellStatus = gameOfLife.getCellStatus(0);
 
-    expect(cellStatus).toBe("ALIVE");
+    expect(cellStatus).toBe("DEAD");
   });
 
-  it("should die when underpopulated", () => {
+  it("should die when underpopulated, when it has 1 neighbour", () => {
     const gameOfLife = new GameOfLife();
-    const neighbors = { numOfDead: 2, numOfAlive: 1}
 
-    const cellStatus = gameOfLife.getCellStatus(neighbors);
+    const cellStatus = gameOfLife.getCellStatus(1);
 
     expect(cellStatus).toBe("DEAD");
   });
