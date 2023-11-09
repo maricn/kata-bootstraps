@@ -1,5 +1,5 @@
 export class GameOfLife {
-  public getCellStatus() {
-    return "ALIVE"
+  public getCellStatus(a: number) {
+    return "DEAD"
   }
 }
